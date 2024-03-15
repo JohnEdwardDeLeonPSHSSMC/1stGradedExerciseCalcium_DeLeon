@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="inputted"></div>
+    <div id="swapped"></div>
+    <div id="sum"></div>
+    <script>
+        enter1 = 0;
+        enter2 = 0;
+
+        while (enter1 === 0) {
+            var num1 = prompt("Enter the first number: ");
+            if (isNaN(num1)) {
+                window.alert("The value you have entered is not a number. Please try again.");
+                enter1 = 0;
+            } else {
+                enter1 = 1;
+            }
+        }
+
+        while (enter2 === 0) {
+            var num2 = prompt("Enter the second number: ");
+            if (isNaN(num2)) {
+                window.alert("The value you have entered is not a number. Please try again.");
+                enter2 = 0;
+            } else {
+                enter2 = 1;
+            }
+        }
+
+        function sum (num1, num2) {
+            return num1 - -num2; //Subtracting a negative is the same as adding a positive
+        }
+
+        document.getElementById("inputted").innerText = "The inputs before swapping: " + num1 + " and " + num2 + ".";
+        document.getElementById("swapped").innerText = "After swapping: " + num2 + " and " + num1 + ".";
+        document.getElementById("sum").innerText = "The sum of the two numbers is " + sum(num1, num2) + ".";
+    </script>
+</body>
+</html>
